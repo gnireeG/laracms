@@ -24,5 +24,5 @@ Route::middleware('auth')->group(function () {
     })->name('logout');
     
     // Admin placeholder
-    Route::get('/admin', \LaraCms\Core\Livewire\Dashboard::class)->name('admin');
+    Route::get('/admin', \Laracms\Core\Livewire\Dashboard::class)->name('admin');
 });

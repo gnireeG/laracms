@@ -1,6 +1,6 @@
 <?php
 
-namespace LaraCms\Core\Components;
+namespace Laracms\Core\Components;
 
 use Livewire\Component;
 

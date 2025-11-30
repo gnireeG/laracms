@@ -1,6 +1,6 @@
 <?php
 
-namespace LaraCms\Core\Livewire;
+namespace Laracms\Core\Livewire;
 
 use Livewire\Component;
 use Livewire\Attributes\Layout;

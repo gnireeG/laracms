@@ -1,6 +1,6 @@
 <?php
 
-namespace LaraCms\Core\Console\Commands;
+namespace Laracms\Core\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
@@ -60,7 +60,7 @@ class MakeLivewireCommand extends Command
         $className = Str::studly(array_pop($parts));
         $namespace = collect($parts)->map(fn($part) => Str::studly($part))->implode('\\');
 
-        $fullNamespace = 'LaraCms\\Core\\Livewire' . ($namespace ? '\\' . $namespace : '');
+        $fullNamespace = 'Laracms\\Core\\Livewire' . ($namespace ? '\\' . $namespace : '');
         $tagName = 'laracms-' . Str::kebab($name);
         $viewName = Str::kebab($name);
 

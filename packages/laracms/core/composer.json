@@ -10,13 +10,13 @@
     },
     "autoload": {
         "psr-4": {
-            "LaraCms\\Core\\": "src/"
+            "Laracms\\Core\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "LaraCms\\Core\\CoreServiceProvider"
+                "Laracms\\Core\\CoreServiceProvider"
             ]
         }
     }

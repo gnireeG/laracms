@@ -1,6 +1,6 @@
 <?php
 
-namespace LaraCms\Core\Http\Livewire\Auth;
+namespace Laracms\Core\Http\Livewire\Auth;
 
 use Livewire\Component;
 use Livewire\Attributes\Validate;

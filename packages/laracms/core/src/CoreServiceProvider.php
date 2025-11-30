@@ -1,6 +1,6 @@
 <?php
 
-namespace LaraCms\Core;
+namespace Laracms\Core;
 
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
@@ -8,6 +8,13 @@ use Laravel\Fortify\Fortify;
 
 class CoreServiceProvider extends ServiceProvider
 {
+    public function register(): void
+    {
+        $this->app->singleton(Services\MenuService::class, function ($app) {
+            return new Services\MenuService();
+        });
+    }
+
     public function boot(): void
     {
         // Views laden
@@ -50,6 +57,7 @@ class CoreServiceProvider extends ServiceProvider
     protected function registerComponents(): void
     {
         Livewire::component('laracms-text', Components\Text::class);
-        Livewire::component('laracms-login', \LaraCms\Core\Livewire\Auth\Login::class);
+        Livewire::component('laracms-login', \Laracms\Core\Livewire\Auth\Login::class);
+        Livewire::component('laracms-navigation', \Laracms\Core\Livewire\Layout\Navigation::class);
     }
 }

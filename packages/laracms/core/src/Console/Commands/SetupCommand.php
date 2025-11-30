@@ -1,6 +1,6 @@
 <?php
 
-namespace LaraCms\Core\Console\Commands;
+namespace Laracms\Core\Console\Commands;
 
 use Illuminate\Console\Command;
 
