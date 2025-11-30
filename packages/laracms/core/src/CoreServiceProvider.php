@@ -59,5 +59,6 @@ class CoreServiceProvider extends ServiceProvider
         Livewire::component('laracms-text', Components\Text::class);
         Livewire::component('laracms-login', \Laracms\Core\Livewire\Auth\Login::class);
         Livewire::component('laracms-navigation', \Laracms\Core\Livewire\Layout\Navigation::class);
+        Livewire::component('laracms-theme-toggle', \Laracms\Core\Livewire\Components\ThemeToggle::class);
     }
 }
