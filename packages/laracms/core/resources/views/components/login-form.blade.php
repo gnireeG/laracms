@@ -1,7 +1,7 @@
 <div class="min-h-screen flex items-center justify-center">
     <div class="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
         <div class="text-center mb-8">
-            <h2 class="text-3xl font-bold text-gray-900">LaraCMS</h2>
+            <div class="flex justify-center"><x-laracms::logo /></div>
             <p class="text-gray-600 mt-2">Sign in to your account</p>
         </div>
 

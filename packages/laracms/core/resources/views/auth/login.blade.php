@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - LaraCMS</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    @include('laracms::layouts.head')
 </head>
 <body class="bg-gray-100">
     @livewire('laracms-login')

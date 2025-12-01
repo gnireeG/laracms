@@ -11,6 +11,7 @@
     @livewireStyles
 </head>
 <body>
+    <nav class="w-screen h-16 bg-gray-800 text-white flex items-center px-4">Beispiel navigation</nav>
     {{ $slot }}
 
     @livewireScripts

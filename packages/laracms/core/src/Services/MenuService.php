@@ -5,15 +5,66 @@ namespace Laracms\Core\Services;
 class MenuService
 {
 
-    private array $menuItems = [];
-
-    /**
-     * Create a new class instance.
-     */
-    public function __construct()
-    {
-        //
-    }
+    private array $menuItems = [
+        [
+            'type' => 'item',
+            'label' => 'Dashboard',
+            'id' => 'dashboard',
+            'href' => '/admin',
+            'icon' => 'house'
+        ],
+        [
+            'type' => 'group',
+            'label' => 'Pages',
+            'icon' => 'journal-text',
+            'id' => 'pages',
+            'items' => [
+                [
+                    'type' => 'item',
+                    'label' => 'All Pages',
+                    'id' => 'all_pages',
+                    'href' => '/admin/pages',
+                    'icon' => null
+                ],
+                [
+                    'type' => 'item',
+                    'label' => 'Create new Page',
+                    'id' => 'create_new_page',
+                    'href' => '/admin/pages/create',
+                    'icon' => null
+                ]
+            ]
+        ],
+        [
+            'type' => 'group',
+            'label' => 'Settings',
+            'icon' => 'gear',
+            'id' => 'settings',
+            'items' => [
+                [
+                    'type' => 'item',
+                    'label' => 'Theme',
+                    'id' => 'theme_settings',
+                    'href' => '/admin/settings/theme',
+                    'icon' => null
+                ],
+                [
+                    'type' => 'item',
+                    'label' => 'Security',
+                    'id' => 'security_settings',
+                    'href' => '/admin/settings/security',
+                    'icon' => null
+                ],
+                [
+                    'type' => 'item',
+                    'label' => 'Languages',
+                    'id' => 'language_settings',
+                    'href' => '/admin/settings/languages',
+                    'icon' => null
+                ]
+            ]
+        ]
+    ];
 
     public function getMenu(): array {
         return $this->menuItems;

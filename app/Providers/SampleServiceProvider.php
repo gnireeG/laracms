@@ -23,5 +23,12 @@ class SampleServiceProvider extends ServiceProvider
         $menuService->addMenuGroup(label: 'Shop', icon: 'bag', id: 'shop');
         $menuService->addMenuItem(label: 'Produkte', id: 'products', group_id: 'shop', href: '/admin/products');
         $menuService->addMenuItem(label: 'Bestellungen', id: 'orders', group_id: 'shop', href: '/admin/orders');
+
+        $menuService->addMenuGroup(label: 'CRM', icon: 'people', id: 'crm');
+        $menuService->addMenuItem(label: 'Kunden', id: 'customers', group_id: 'crm', href: '/admin/customers');
+        $menuService->addMenuItem(label: 'Leads', id: 'leads', group_id: 'crm', href: '/admin/leads');
+        $menuService->addMenuItem(label: 'Verkäufe', id: 'sales', group_id: 'crm', href: '/admin/sales');
+
+        $menuService->addMenuItem(label: 'Support', icon: 'question-circle', id: 'support', href: '/admin/support');
     }
 }

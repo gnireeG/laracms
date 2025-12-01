@@ -5,6 +5,7 @@ namespace Laracms\Core;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
 use Laravel\Fortify\Fortify;
+use Laracms\Core\Services\ComponentRegistry;
 
 class CoreServiceProvider extends ServiceProvider
 {
@@ -12,6 +13,10 @@ class CoreServiceProvider extends ServiceProvider
     {
         $this->app->singleton(Services\MenuService::class, function ($app) {
             return new Services\MenuService();
+        });
+
+        $this->app->singleton(Services\ComponentRegistry::class, function ($app) {
+            return new Services\ComponentRegistry();
         });
     }
 
@@ -31,6 +36,7 @@ class CoreServiceProvider extends ServiceProvider
             $this->commands([
                 Console\Commands\SetupCommand::class,
                 Console\Commands\MakeLivewireCommand::class,
+                Console\Commands\LoadDemoDataCommand::class,
             ]);
         }
         
@@ -56,9 +62,18 @@ class CoreServiceProvider extends ServiceProvider
     
     protected function registerComponents(): void
     {
+
+        $registry = $this->app->make(ComponentRegistry::class);
+
         Livewire::component('laracms-text', Components\Text::class);
         Livewire::component('laracms-login', \Laracms\Core\Livewire\Auth\Login::class);
         Livewire::component('laracms-navigation', \Laracms\Core\Livewire\Layout\Navigation::class);
         Livewire::component('laracms-theme-toggle', \Laracms\Core\Livewire\Components\ThemeToggle::class);
+        Livewire::component('laracms-show-page', \Laracms\Core\Livewire\ShowPage::class);
+        Livewire::component('laracms-component-renderer', \Laracms\Core\Livewire\Components\ComponentRenderer::class);
+
+        $registry->register('laracms-ui-text', \Laracms\Core\Livewire\Ui\Text::class);
+        $registry->register('laracms-ui-grid', \Laracms\Core\Livewire\Ui\Grid::class);
+        $registry->register('laracms-ui-card', \Laracms\Core\Livewire\Ui\Card::class);
     }
 }
