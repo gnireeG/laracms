@@ -3,7 +3,7 @@
     'label' => null,
     'placeholder' => null,
     'icon' => null,
-    'iconPosition' => 'left',
+    'iconposition' => 'left',
     'disabled' => false,
     'required' => false,
 ])
@@ -12,7 +12,7 @@
     $inputClasses = 'w-full px-3 py-2 bg-background-card text-text border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary';
 
     if ($icon) {
-        $inputClasses .= $iconPosition === 'left' ? ' pl-10' : ' pr-10';
+        $inputClasses .= $iconposition === 'left' ? ' pl-10' : ' pr-10';
     }
 
     if ($disabled) {
@@ -25,15 +25,15 @@
         <label class="block text-text text-sm font-medium mb-2">
             {{ $label }}
             @if($required)
-                <span class="text-red-500">*</span>
+                <span>*</span>
             @endif
         </label>
     @endif
 
     <div class="relative">
-        @if($icon && $iconPosition === 'left')
+        @if($icon && $iconposition === 'left')
             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                <x-laracms::icon name="{{ $icon }}" class="text-text/50" />
+                <x-laracms::icon name="{{ $icon }}" class="text-text" />
             </div>
         @endif
 
@@ -45,9 +45,9 @@
             {{ $attributes->merge(['class' => $inputClasses]) }}
         >
 
-        @if($icon && $iconPosition === 'right')
+        @if($icon && $iconposition === 'right')
             <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                <x-laracms::icon name="{{ $icon }}" class="text-text/50" />
+                <x-laracms::icon name="{{ $icon }}" class="text-text" />
             </div>
         @endif
     </div>
