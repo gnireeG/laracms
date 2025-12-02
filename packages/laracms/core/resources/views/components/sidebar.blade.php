@@ -1,4 +1,8 @@
-<nav class="fixed h-screen w-64 bg-background-card flex flex-col justify-between p-2 border-r border-border" x-data="{}">
+<nav
+x-data
+x-cloak
+class="fixed h-screen w-screen sm:w-64 transform lg:translate-x-0 bg-background-card flex flex-col justify-between p-2 border-r border-border transition-transform z-10"
+:class="$store.nav ? 'translate-x-0' : '-translate-x-full'">
     <div>
         <x-laracms::logo />
         <div class="mt-8">

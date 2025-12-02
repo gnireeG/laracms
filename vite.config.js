@@ -10,7 +10,12 @@ export default defineConfig({
                 'resources/js/app.js',
                 'packages/laracms/core/resources/css/laracms.scss'
             ],
-            refresh: true,
+            refresh: [
+                'resources/**',
+                'packages/laracms/core/resources/views/**',
+                'packages/laracms/core/resources/css/**',
+                'packages/laracms/core/src/**/*.php',
+            ],
         }),
         tailwindcss(),
     ],

@@ -30,7 +30,7 @@ class CoreServiceProvider extends ServiceProvider
 
         // Migrations laden
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        
+
         // Commands registrieren
         if ($this->app->runningInConsole()) {
             $this->commands([
@@ -42,7 +42,7 @@ class CoreServiceProvider extends ServiceProvider
         
         // Fortify konfigurieren
         $this->configureFortify();
-        
+
         // Components registrieren
         $this->registerComponents();
     }
@@ -75,5 +75,6 @@ class CoreServiceProvider extends ServiceProvider
         $registry->register('laracms-ui-text', \Laracms\Core\Livewire\Ui\Text::class);
         $registry->register('laracms-ui-grid', \Laracms\Core\Livewire\Ui\Grid::class);
         $registry->register('laracms-ui-card', \Laracms\Core\Livewire\Ui\Card::class);
+        $registry->register('laracms-ui-container', \Laracms\Core\Livewire\Ui\Container::class);
     }
 }

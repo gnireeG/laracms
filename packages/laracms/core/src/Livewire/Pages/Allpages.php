@@ -1,6 +1,6 @@
 <?php
 
-namespace Laracms\Core\Livewire;
+namespace Laracms\Core\Livewire\Pages;
 
 use Livewire\Component;
 use Livewire\Attributes\Layout;
@@ -8,8 +8,8 @@ use Livewire\Attributes\Title;
 use Laracms\Core\Models\Page;
 
 #[Layout('laracms::layouts.admin')]
-#[Title('Pages')]
-class Pages extends Component
+#[Title('All Pages')]
+class Allpages extends Component
 {
 
     public $rootpages = [];
@@ -20,6 +20,6 @@ class Pages extends Component
 
     public function render()
     {
-        return view('laracms::livewire.pages');
+        return view('laracms::livewire.pages.allpages');
     }
 }

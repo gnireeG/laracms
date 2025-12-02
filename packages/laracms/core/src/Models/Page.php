@@ -112,6 +112,7 @@ class Page extends Model
             ->map(fn($page) => [
                 'title' => $page->title,
                 'url' => $page->url,
+                'id' => $page->id,
             ])
             ->toArray();
     }

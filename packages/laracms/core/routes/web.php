@@ -26,14 +26,9 @@ Route::middleware('auth')->group(function () {
     
     // Admin placeholder
     Route::get('/admin', \Laracms\Core\Livewire\Dashboard::class)->name('admin');
-    Route::get('/admin/pages', \Laracms\Core\Livewire\Pages::class)->name('admin.pages');
+    Route::get('/admin/pages', \Laracms\Core\Livewire\Pages\Allpages::class)->name('admin.pages');
+    Route::get('/admin/pages/{page}', \Laracms\Core\Livewire\Pages\Edit::class)->name('admin.pages.edit');
 });
 
 
-Route::get('/{url}', \Laracms\Core\Livewire\ShowPage::class /* function ($url) {
-    $page = Page::where('url', '/' . $url)
-        ->where('is_published', true)
-        ->firstOrFail();
-    
-    return view('laracms::pages.show', ['page' => $page]);
-} */)->where('url', '.*');
+Route::get('/{url}', \Laracms\Core\Livewire\ShowPage::class)->where('url', '.*');

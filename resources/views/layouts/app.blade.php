@@ -10,9 +10,9 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
-<body>
+<body class="bg-ui-bg">
     <nav class="w-screen h-16 bg-gray-800 text-white flex items-center px-4">Beispiel navigation</nav>
-    {{ $slot }}
+    <main>{{ $slot }}</main>
 
     @livewireScripts
 </body>

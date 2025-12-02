@@ -20,10 +20,21 @@
     --color-background-card: var(--color-white);
     --color-text: #343a40;
     --color-primary: #0d6efd;
+    --color-secondary: #3fcaa3;
     --color-button-bg: var(--color-neutral-800);
     --color-button-bg-hover: var(--color-neutral-700);
     --color-button-text: var(--color-white);
     --color-border: var(--color-neutral-300);
+
+    /* FRONTEND THEME */
+    --color-ui-bg: var(--color-neutral-50);
+    --color-ui-bg-alt: var(--color-neutral-100);
+    --color-ui-bg-card: var(--color-white);
+    --color-ui-border: var(--color-neutral-300);
+
+    --radius-ui-sm: var(--radius-sm);
+    --radius-ui-md: var(--radius);
+    --radius-ui-lg: var(--radius-lg);
 }
 
 @layer theme {
@@ -33,6 +44,7 @@
         --color-background-card: var(--color-neutral-800);
         --color-text: #e9ecef;
         --color-primary: #0d6efd;
+        --color-secondary: #6c757d;
         --color-button-bg: var(--color-neutral-200);
         --color-button-bg-hover: var(--color-neutral-300);
         --color-button-text: var(--color-neutral-800);
