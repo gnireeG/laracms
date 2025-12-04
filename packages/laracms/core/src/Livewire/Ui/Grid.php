@@ -42,10 +42,9 @@ class Grid extends UiComponent
                 'options' => [
                     '0' => 'None',
                     '1rem' => 'Small',
-                    '1.5rem' => 'Medium',
                     '2rem' => 'Large',
                 ],
-                'default' => '1.5rem',
+                'default' => '1rem',
             ],
         ];
     }

@@ -1,6 +1,8 @@
 <x-laracms::layout.admin-content class="p-8" :title="$page->title" :breadcrumbs="[
     ['label' => 'All Pages', 'url' => route('admin.pages')], ...$this->breadcrumbs]">
-
+    <x-slot name="actions">
+        <x-laracms::button icon="pencil" variant="primary" size="md" wire:navigate>Site builder</x-laracms::button>
+    </x-slot>
     <div class="grid grid-cols-12 gap-4">
         <div class="col-span-12 md:col-span-4 xl:col-span-3 p-4 bg-background-card border border-border">
             <x-laracms::heading level="3" class="mb-4">Subpages</x-laracms::heading>
@@ -24,5 +26,5 @@
             </x-laracms::form>
         </div>
     </div>
-    {{-- <textarea wire:model="content" class="w-full h-96 border border-ui-border rounded-ui-md p-4 mt-8"></textarea> --}}
+    <textarea wire:model="content" class="w-full h-96 border border-ui-border rounded-ui-md p-4 mt-8"></textarea>
 </x-laracms::layout.admin-content>

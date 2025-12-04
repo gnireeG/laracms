@@ -30,7 +30,11 @@
     <main class="ml-0 lg:ml-64 transition-all grow" @click="$store.nav = false">
         {{ $slot }}
     </main>
-
+    @persist('notifications')
+    <div class="fixed bottom-4 right-4 z-40">
+        <livewire:laracms-notification />
+    </div>
+    @endpersist
     @livewireScripts
 </body>
 </html>

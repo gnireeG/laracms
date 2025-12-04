@@ -17,4 +17,5 @@
     @foreach($children as $child)
         @livewire('laracms-component-renderer', ['component' => $child, 'editMode' => $editMode], key($child['id']))
     @endforeach
+    @include('laracms::editor')
 </div>

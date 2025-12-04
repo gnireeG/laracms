@@ -48,7 +48,6 @@ class Edit extends Component
 
     public function save()
     {
-        sleep(1);
         $validated = $this->validate();
         $this->page->title = $validated['title'];
         $this->page->slug = $validated['slug'];
@@ -57,7 +56,10 @@ class Edit extends Component
         $this->page->save();
         $this->page = $this->page->fresh();
         $this->fillForm();
-        session()->flash('message', 'Page saved successfully.');
+        $this->dispatch('notification', [
+            'type' => 'success',
+            'message' => 'Page updated successfully!',
+        ]);
     }
 
     public function mount(){

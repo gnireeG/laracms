@@ -31,4 +31,5 @@ Route::middleware('auth')->group(function () {
 });
 
 
+Route::get('/edit/{url}', \Laracms\Core\Livewire\EditPage::class)->where('url', '.*');
 Route::get('/{url}', \Laracms\Core\Livewire\ShowPage::class)->where('url', '.*');

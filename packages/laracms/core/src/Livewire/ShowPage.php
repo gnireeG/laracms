@@ -11,12 +11,10 @@ class ShowPage extends Component
 {
 
     public $page = null;
-    public $breadcrumbs = [];
 
     public function mount($url)
     {
         $this->page = Page::where('url', '/' . $url)->where('is_published', true)->firstOrFail();
-        $this->breadcrumbs = $this->page->breadcrumbs();
         
     }
 

@@ -9,11 +9,30 @@
         default => 'bg-button-bg text-base hover:bg-button-bg-hover text-button-text',
     };
 
-    $class .= match ($size) {
-        'sm' => ' text-sm py-1 px-3',
-        'md' => ' text-base py-1.5 px-4',
-        'lg' => ' text-lg py-2 px-5'
-    };
+    if(!$slot->isEmpty() && $icon) {
+        $class .= match ($size) {
+            'sm' => ' text-sm py-1 px-3',
+            'md' => ' text-base py-1.5 px-4',
+            'lg' => ' text-lg py-2 px-5'
+        };
+
+    }
+
+    if($slot->isEmpty() && $icon) {
+        $class .= match ($size) {
+            'sm' => ' text-sm pl-1 pt-1 pb-1',
+            'md' => ' text-base pl-2 pt-2 pb-2 pr-1',
+            'lg' => ' text-lg pl-3 pt-3 pb-3 pr-2'
+        };
+    }
+
+    if(!$slot->isEmpty() && !$icon) {
+        $class .= match ($size) {
+            'sm' => ' py-1 px-3',
+            'md' => ' py-1.5 px-4',
+            'lg' => ' py-2 px-5'
+        };
+    }
 
     $iconSize = match ($size) {
         'sm' => '4',

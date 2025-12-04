@@ -6,7 +6,12 @@
         @endforeach
         <p class="opacity-60">{{ $title }}</p>
     </div>
-    <x-laracms::heading>{{ $title }}</x-laracms::heading>
+    <div class="flex flex-wrap gap-4 justify-between">
+        <x-laracms::heading>{{ $title }}</x-laracms::heading>
+        <div>
+            {{ $actions ?? '' }}
+        </div>
+    </div>
     <x-laracms::separator class="my-8" />
     <main>{{ $slot }}</main>
 </div>

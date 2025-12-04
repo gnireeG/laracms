@@ -65,13 +65,16 @@ class CoreServiceProvider extends ServiceProvider
 
         $registry = $this->app->make(ComponentRegistry::class);
 
+        // Livewire Components registrieren
         Livewire::component('laracms-text', Components\Text::class);
         Livewire::component('laracms-login', \Laracms\Core\Livewire\Auth\Login::class);
         Livewire::component('laracms-navigation', \Laracms\Core\Livewire\Layout\Navigation::class);
         Livewire::component('laracms-theme-toggle', \Laracms\Core\Livewire\Components\ThemeToggle::class);
         Livewire::component('laracms-show-page', \Laracms\Core\Livewire\ShowPage::class);
         Livewire::component('laracms-component-renderer', \Laracms\Core\Livewire\Components\ComponentRenderer::class);
+        Livewire::component('laracms-notification', \Laracms\Core\Livewire\Components\Notification::class);
 
+        // UI Components (for use in the site builder)
         $registry->register('laracms-ui-text', \Laracms\Core\Livewire\Ui\Text::class);
         $registry->register('laracms-ui-grid', \Laracms\Core\Livewire\Ui\Grid::class);
         $registry->register('laracms-ui-card', \Laracms\Core\Livewire\Ui\Card::class);
