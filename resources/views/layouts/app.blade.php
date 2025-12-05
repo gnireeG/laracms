@@ -9,9 +9,13 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
+    @include('laracms::layouts.laracms-head')
 </head>
 <body class="bg-ui-bg">
-    <nav class="w-screen h-16 bg-gray-800 text-white flex items-center px-4">Beispiel navigation</nav>
+    <nav class="w-screen h-16 bg-gray-800 text-white flex items-center px-4 justify-between">
+        <div>Navigation</div>
+        <div><x-laracms::button icon="lightbulb" @click="document.querySelector('body').classList.toggle('dark')" /></div>
+    </nav>
     <main>{{ $slot }}</main>
 
     @livewireScripts

@@ -39,6 +39,11 @@ class Card extends UiComponent
                 'label' => 'Text',
                 'default' => 'Card content goes here...',
             ],
+            'content' => [
+                'type' => 'richtext',
+                'label' => 'Content',
+                'default' => '<p>This is a card component. You can add <strong>rich text</strong> content here.</p>',
+            ],
             'shadow' => [
                 'type' => 'checkbox',
                 'label' => 'Shadow',

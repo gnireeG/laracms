@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import '@/packages/laracms/core/resources/css/laracms.css';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -15,16 +16,7 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 
     /* LaraCMS Custom Colors */
-    --color-background: var(--color-neutral-100);
-    --color-background-alt: var(--color-neutral-200);
-    --color-background-card: var(--color-white);
-    --color-text: #343a40;
-    --color-primary: #0d6efd;
-    --color-secondary: #3fcaa3;
-    --color-button-bg: var(--color-neutral-800);
-    --color-button-bg-hover: var(--color-neutral-700);
-    --color-button-text: var(--color-white);
-    --color-border: var(--color-neutral-300);
+
 
     /* FRONTEND THEME */
     --color-ui-bg: var(--color-neutral-50);
@@ -39,26 +31,11 @@
 
 @layer theme {
     .dark{
-        --color-background: var(--color-neutral-900);
-        --color-background-alt: var(--color-neutral-950);
-        --color-background-card: var(--color-neutral-800);
-        --color-text: #e9ecef;
-        --color-primary: #0d6efd;
-        --color-secondary: #6c757d;
-        --color-button-bg: var(--color-neutral-200);
-        --color-button-bg-hover: var(--color-neutral-300);
-        --color-button-text: var(--color-neutral-800);
-        --color-border: var(--color-neutral-700);
+
+        /* FRONTEND THEME */
+        --color-ui-bg: var(--color-neutral-900);
+        --color-ui-bg-alt: var(--color-neutral-950);
+        --color-ui-bg-card: var(--color-neutral-800);
+        --color-ui-border: var(--color-neutral-700);
     }
 }
-
-@layer theme{
-    .admin{
-        background-color: var(--color-background);
-        color: var(--color-text);
-    }
-}
-
-[x-cloak] {
-      display: none !important;
-  }

@@ -2,23 +2,6 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     @include('laracms::layouts.head')
-    <script>
-        document.addEventListener('alpine:init', () => {
-            Alpine.store('nav', false);
-        });
-        document.addEventListener('livewire:navigate', preventUnsavedChangesLoss)
-
-        window.addEventListener('beforeunload', preventUnsavedChangesLoss)
-
-        function preventUnsavedChangesLoss(e) {
-            const dirtyForm = document.querySelector('form.unsaved-changes')
-            if (dirtyForm) {
-                if (!confirm('You have unsaved changes. Are you sure you want to leave this page?')) {
-                    e.preventDefault()
-                }
-            }
-        }
-    </script>
 </head>
 <body class="admin flex {{ session('theme', 'light') }}" :class="$store.nav ? 'overflow-y-hidden' : ''" x-data="{}">
     <!-- Admin Navigation -->

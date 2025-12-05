@@ -20,12 +20,12 @@
             wire:key="wrapper-{{ $this->component['id'] }}"
         >
             <div
-                class="absolute -top-8 right-0 gap-1 bg-white shadow-lg rounded p-1 z-10"
+                class="absolute -top-8 right-0 gap-1 bg-white shadow-lg rounded p-1 z-10 flex"
                 x-show="$store.componentHover.hoveredId === '{{ $this->component['id'] }}'"
                 style="display: none;"
             >
-                <button class="px-2 py-1 text-xs bg-blue-500 text-white rounded" @click="document.getElementById('component-modal-{{ $this->component['id'] }}').showModal()">Edit</button>
-                <button class="px-2 py-1 text-xs bg-red-500 text-white rounded">Delete</button>
+                <x-laracms::button icon="pencil" variant="primary" title="Edit Component" @click="document.getElementById('component-modal-{{ $this->component['id'] }}').showModal()" />
+                <x-laracms::button icon="trash" variant="danger" title="Delete Component"  />
             </div>
 
         </div>

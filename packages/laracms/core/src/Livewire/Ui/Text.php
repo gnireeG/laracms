@@ -30,7 +30,7 @@ class Text extends UiComponent
     {
         return [
             'content' => [
-                'type' => 'textarea',
+                'type' => 'richtext',
                 'label' => 'Content',
                 'default' => 'Your text here...',
             ],

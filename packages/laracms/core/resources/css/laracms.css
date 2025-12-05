@@ -1,0 +1,64 @@
+@import 'tailwindcss';
+@source '../views/**/*.blade.php';
+@source '../**/*.js';
+
+@theme{
+    --color-background: var(--color-neutral-100);
+    --color-background-alt: var(--color-neutral-200);
+    --color-background-card: var(--color-white);
+    --color-text: #343a40;
+    --color-primary: #0d6efd;
+    --color-secondary: #3fcaa3;
+    --color-button-bg: var(--color-neutral-800);
+    --color-button-bg-hover: var(--color-neutral-700);
+    --color-button-text: var(--color-white);
+    --color-border: var(--color-neutral-300);
+}
+
+@layer theme {
+    .dark{
+        --color-background: var(--color-neutral-900);
+        --color-background-alt: var(--color-neutral-950);
+        --color-background-card: var(--color-neutral-800);
+        --color-text: #e9ecef;
+        --color-primary: #0d6efd;
+        --color-secondary: #6c757d;
+        --color-button-bg: var(--color-neutral-200);
+        --color-button-bg-hover: var(--color-neutral-300);
+        --color-button-text: var(--color-neutral-800);
+        --color-border: var(--color-neutral-700);
+    }
+    .admin{
+        background-color: var(--color-background);
+        color: var(--color-text);
+    }
+}
+
+
+[x-cloak] {
+      display: none !important;
+  }
+
+.laracms-button-trix{
+    @apply bg-background-card hover:bg-button-bg-hover/10;
+}
+
+.dark .laracms-button-trix:not(.trix-active){
+    @apply bg-neutral-800 hover:bg-neutral-700 text-white;
+}
+
+.laracms-button-trix.trix-active{
+    @apply bg-button-bg text-button-text;
+}
+
+.laracms-trix-button-group{
+    @apply flex rounded-l-md rounded-r-md border border-border;
+}
+
+trix-editor.laracms-trix-editor{
+    @apply px-3 py-2 bg-background-card text-text border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary;
+}
+
+dialog::backdrop {
+    @apply bg-black/50;
+}

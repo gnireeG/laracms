@@ -1,12 +1,13 @@
 @props(['variant' => 'default', 'icon' => null, 'iconposition' => 'left', 'disabled' => false, 'size' => 'md'])
 @php
     $class = match ($variant) {
-        'primary' => 'bg-primary text-white hover:bg-primary-dark',
-        'secondary' => 'bg-secondary text-white hover:bg-secondary-dark',
-        'danger' => 'bg-red-600 text-white hover:bg-red-700',
-        'outline' => 'bg-transparent border border-border-secondary text-base hover:bg-background-hover',
-        'ghost' => 'bg-transparent text-base hover:bg-button-bg-hover/10',
-        default => 'bg-button-bg text-base hover:bg-button-bg-hover text-button-text',
+        'primary' => 'bg-primary text-white hover:bg-primary/80 rounded-md',
+        'secondary' => 'bg-secondary text-white hover:bg-secondary-dark rounded-md',
+        'danger' => 'bg-red-600 text-white hover:bg-red-700 rounded-md',
+        'outline' => 'bg-transparent border border-border-secondary text-base hover:bg-background-hover rounded-md',
+        'ghost' => 'bg-transparent text-base hover:bg-button-bg-hover/10 rounded-md',
+        'trix' => 'laracms-button-trix first:rounded-l-md last:rounded-r-md',
+        default => 'bg-button-bg text-base hover:bg-button-bg-hover text-button-text rounded-md',
     };
 
     if(!$slot->isEmpty() && $icon) {
@@ -42,7 +43,7 @@
 
 @endphp
 <button
-    {{ $attributes->merge(['class' => "rounded-md relative flex justify-center items-center {$class} " . ($disabled ? 'cursor-not-allowed opacity-60' : 'cursor-pointer')]) }}
+    {{ $attributes->merge(['class' => "relative flex justify-center items-center {$class} " . ($disabled ? 'cursor-not-allowed opacity-60' : 'cursor-pointer')]) }}
     x-data="{}"
     :disabled="{{ $disabled ? 'true' : 'false' }}"
     wire:loading.class="opacity-60 cursor-not-allowed"
