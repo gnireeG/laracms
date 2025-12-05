@@ -2,7 +2,7 @@
     class="grid" 
     style="
         grid-template-columns: repeat({{ $this->getData('columns', 3) }}, 1fr);
-        gap: {{ $this->getData('gap', '1.5rem') }};
+        gap: {{ $this->getData('gap', '1rem') }};
     "
 >
     @foreach($children as $child)

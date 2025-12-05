@@ -21,6 +21,14 @@ class EditPage extends Component
         $this->tempcontent = $this->updateComponentById($this->tempcontent, $payload['id'], $payload);
     }
 
+    public function save()
+    {
+        $this->page->content = $this->tempcontent;
+        $this->page->save();
+
+        session()->flash('message', 'Page saved successfully.');
+    }
+
     /**
      * Recursively search and update component by ID
      */

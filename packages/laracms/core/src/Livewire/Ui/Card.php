@@ -39,6 +39,11 @@ class Card extends UiComponent
                 'label' => 'Text',
                 'default' => 'Card content goes here...',
             ],
+            'shadow' => [
+                'type' => 'checkbox',
+                'label' => 'Shadow',
+                'default' => true,
+            ],
         ];
     }
 }
